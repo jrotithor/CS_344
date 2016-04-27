@@ -1,0 +1,160 @@
+#Initializing - Cleaning up - ignore Operation Not Permitted errors
+
+#-----------------------------------------
+#START OF GRADING SCRIPT
+#keygen 20 > key20
+#5 POINTS: key20 must exist
+key20 exists!
+
+#-----------------------------------------
+#5 POINTS: Number of characters in key20, should be 21:
+21 key20
+
+#-----------------------------------------
+#keygen 70000 > key70000
+#5 POINTS: Number of characters in key70000, should be 70001:
+70001 key70000
+
+#-----------------------------------------
+#otp_enc plaintext1 key20 $encport
+#10 POINTS: Should return error about too-short key
+Error: key20 is too short
+#-----------------------------------------
+#otp_enc plaintext1 key70000 $encport
+#20 POINTS: Should return encrypted version of plaintext1
+MALZTD ZDYNEFBSCIGLLVVDQKZBGZVF NLMM
+otp_enc_d: 
+#-----------------------------------------
+#otp_enc plaintext1 key70000 $encport > ciphertext1
+otp_enc_d: #10 POINTS: ciphertext1 must exist
+ciphertext1 exists!
+
+#-----------------------------------------
+#10 POINTS: ciphertext1 must be same number of chars as source
+#wc -m plaintext1
+37 plaintext1
+#Should be same: wc -m ciphertext1
+37 ciphertext1
+
+#-----------------------------------------
+#5 POINTS: ciphertext1 should look encrypted
+MALZTD ZDYNEFBSCIGLLVVDQKZBGZVF NLMM
+
+#-----------------------------------------
+#otp_dec ciphertext1 key70000 $encport
+#5 POINTS: Should fail giving error that otp_dec cannot use otp_enc_d
+otp_enc_d: FUSYVCWYAHMRGDEUIIEXPXHUMUQERIS IDKJ
+
+#-----------------------------------------
+#20 POINTS: should return decrypted ciphertext1 that matches source
+#cat plaintext1
+THE RED GOOSE FLIES AT MIDNIGHT STOP
+#otp_dec ciphertext1 key70000 $decport
+THE RED GOOSE FLIES AT MIDNIGHT STOP
+otp_dec_d: 
+#-----------------------------------------
+#otp_dec ciphertext1 key70000 $decport > plaintext1_a
+otp_dec_d: #10 POINTS: plaintext1_a must exist
+plaintext1_a exists!
+
+#-----------------------------------------
+#cmp plaintext1 plaintext1_a
+#5 POINTS: plaintext1 must be the same as plaintext1_a:
+#echo $? should be == 0, which means the cmp succeeded!
+0
+
+#-----------------------------------------
+#20 POINTS: concurrent test of encryption - look for 4 properly-sized ciphertext# files, or 5 where the 5th is 0 bytes
+#5 POINTS: Should be only one error about plaintext5 being bad
+Ten second sleep, your program must complete in this time
+otp_enc_d: otp_enc_d: otp_enc_d: 
+Error: bad input in text file
+otp_enc_d: total 592
+drwxrwx---.  3 rotithoj upg55532  3072 Mar 14 22:47 ./
+drwx--x--x. 62 rotithoj upg55532 20480 Mar 14 21:36 ../
+-rw-r--r--.  1 rotithoj upg55532    55 Mar 13 17:37 1
+-rwxr-xr-x.  1 rotithoj upg55532  6281 Mar 12 09:40 a.out
+-rw-rw----.  1 rotithoj upg55532    30 Mar 14 09:40 cipherer
+-rw-rw----.  1 rotithoj upg55532    37 Mar 14 22:47 ciphertext1
+-rw-rw----.  1 rotithoj upg55532   317 Mar 14 22:47 ciphertext2
+-rw-rw----.  1 rotithoj upg55532    17 Mar 14 22:47 ciphertext3
+-rw-rw----.  1 rotithoj upg55532 32769 Mar 14 22:47 ciphertext4
+-rw-rw----.  1 rotithoj upg55532     0 Mar 14 22:47 ciphertext5
+-rw-rw----.  1 rotithoj upg55532  1533 Feb 29 19:37 client.c
+-rwxr-xr-x.  1 rotithoj upg55532   226 Mar 14 18:41 compileall
+-rw-rw----.  1 rotithoj upg55532    21 Mar 14 22:47 key20
+-rw-rw----.  1 rotithoj upg55532 70001 Mar 14 22:47 key70000
+-rw-rw----.  1 rotithoj upg55532 80001 Mar 13 21:52 key80000
+-rwxrwx---.  1 rotithoj upg55532  9966 Mar 14 22:46 keygen
+-rw-rw----.  1 rotithoj upg55532   835 Mar 14 18:24 keygen.c
+-rw-rw----.  1 rotithoj upg55532  2439 Mar 14 22:47 mytestresults
+-rw-rw----.  1 rotithoj upg55532  1179 Mar 14 10:02 New Text Document.txt
+-rwxrwx---.  1 rotithoj upg55532 14486 Mar 14 22:46 otp_dec
+-rw-r--r--.  1 rotithoj upg55532  3137 Mar 14 18:13 otp_dec.c
+-rwxrwx---.  1 rotithoj upg55532 13848 Mar 14 22:46 otp_dec_d
+-rw-r--r--.  1 rotithoj upg55532  3502 Mar 14 17:46 otp_dec_d.c
+-rwxrwx---.  1 rotithoj upg55532 14470 Mar 14 22:46 otp_enc
+-rw-r--r--.  1 rotithoj upg55532  3067 Mar 14 18:44 otp_enc.c
+-rwxrwx---.  1 rotithoj upg55532 13840 Mar 14 22:46 otp_enc_d
+-rw-r--r--.  1 rotithoj upg55532  3493 Mar 14 18:40 otp_enc_d.c
+drwxrwx---.  2 rotithoj upg55532  1024 Mar 14 18:56 OTP_files/
+-rw-rw----.  1 rotithoj upg55532 27370 Mar 14 18:57 OTP_files.zip
+-rwxrwx---.  1 rotithoj upg55532  4987 Mar 14 18:52 p4gradingscript
+-rw-rw----.  1 rotithoj upg55532    37 Feb 29 19:43 plaintext1
+-rw-rw----.  1 rotithoj upg55532   317 Feb 29 19:43 plaintext2
+-rw-rw----.  1 rotithoj upg55532    17 Feb 29 19:43 plaintext3
+-rw-rw----.  1 rotithoj upg55532 69333 Feb 29 19:43 plaintext4
+-rw-rw----.  1 rotithoj upg55532    42 Feb 29 19:43 plaintext5
+-rw-rw----.  1 rotithoj upg55532  1636 Mar 13 21:57 server.c
+
+#-----------------------------------------
+#15 POINTS: concurrent test of decryption - look for 4 plaintext#_a files that match the plaintext# files
+#Ten second sleep, your program must complete in this time
+otp_dec_d: otp_dec_d: otp_dec_d: otp_dec_d: total 656
+drwxrwx---.  3 rotithoj upg55532  3072 Mar 14 22:47 ./
+drwx--x--x. 62 rotithoj upg55532 20480 Mar 14 21:36 ../
+-rw-r--r--.  1 rotithoj upg55532    55 Mar 13 17:37 1
+-rwxr-xr-x.  1 rotithoj upg55532  6281 Mar 12 09:40 a.out
+-rw-rw----.  1 rotithoj upg55532    30 Mar 14 09:40 cipherer
+-rw-rw----.  1 rotithoj upg55532    37 Mar 14 22:47 ciphertext1
+-rw-rw----.  1 rotithoj upg55532   317 Mar 14 22:47 ciphertext2
+-rw-rw----.  1 rotithoj upg55532    17 Mar 14 22:47 ciphertext3
+-rw-rw----.  1 rotithoj upg55532 32769 Mar 14 22:47 ciphertext4
+-rw-rw----.  1 rotithoj upg55532     0 Mar 14 22:47 ciphertext5
+-rw-rw----.  1 rotithoj upg55532  1533 Feb 29 19:37 client.c
+-rwxr-xr-x.  1 rotithoj upg55532   226 Mar 14 18:41 compileall
+-rw-rw----.  1 rotithoj upg55532    21 Mar 14 22:47 key20
+-rw-rw----.  1 rotithoj upg55532 70001 Mar 14 22:47 key70000
+-rw-rw----.  1 rotithoj upg55532 80001 Mar 13 21:52 key80000
+-rwxrwx---.  1 rotithoj upg55532  9966 Mar 14 22:46 keygen
+-rw-rw----.  1 rotithoj upg55532   835 Mar 14 18:24 keygen.c
+-rw-rw----.  1 rotithoj upg55532  4939 Mar 14 22:47 mytestresults
+-rw-rw----.  1 rotithoj upg55532  1179 Mar 14 10:02 New Text Document.txt
+-rwxrwx---.  1 rotithoj upg55532 14486 Mar 14 22:46 otp_dec
+-rw-r--r--.  1 rotithoj upg55532  3137 Mar 14 18:13 otp_dec.c
+-rwxrwx---.  1 rotithoj upg55532 13848 Mar 14 22:46 otp_dec_d
+-rw-r--r--.  1 rotithoj upg55532  3502 Mar 14 17:46 otp_dec_d.c
+-rwxrwx---.  1 rotithoj upg55532 14470 Mar 14 22:46 otp_enc
+-rw-r--r--.  1 rotithoj upg55532  3067 Mar 14 18:44 otp_enc.c
+-rwxrwx---.  1 rotithoj upg55532 13840 Mar 14 22:46 otp_enc_d
+-rw-r--r--.  1 rotithoj upg55532  3493 Mar 14 18:40 otp_enc_d.c
+drwxrwx---.  2 rotithoj upg55532  1024 Mar 14 18:56 OTP_files/
+-rw-rw----.  1 rotithoj upg55532 27370 Mar 14 18:57 OTP_files.zip
+-rwxrwx---.  1 rotithoj upg55532  4987 Mar 14 18:52 p4gradingscript
+-rw-rw----.  1 rotithoj upg55532    37 Feb 29 19:43 plaintext1
+-rw-rw----.  1 rotithoj upg55532    37 Mar 14 22:47 plaintext1_a
+-rw-rw----.  1 rotithoj upg55532   317 Feb 29 19:43 plaintext2
+-rw-rw----.  1 rotithoj upg55532   317 Mar 14 22:47 plaintext2_a
+-rw-rw----.  1 rotithoj upg55532    17 Feb 29 19:43 plaintext3
+-rw-rw----.  1 rotithoj upg55532    17 Mar 14 22:47 plaintext3_a
+-rw-rw----.  1 rotithoj upg55532 69333 Feb 29 19:43 plaintext4
+-rw-rw----.  1 rotithoj upg55532 32769 Mar 14 22:47 plaintext4_a
+-rw-rw----.  1 rotithoj upg55532    42 Feb 29 19:43 plaintext5
+-rw-rw----.  1 rotithoj upg55532  1636 Mar 13 21:57 server.c
+
+#-----------------------------------------
+#Cleaning up - ignore Operation Not Permitted errors
+./p4gradingscript: line 136: 14428 Terminated              otp_enc_d $encport
+./p4gradingscript: line 136: 14429 Terminated              otp_dec_d $decport
+
+#SCRIPT COMPLETE

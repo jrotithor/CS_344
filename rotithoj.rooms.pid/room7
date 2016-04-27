@@ -1,0 +1,6 @@
+ROOM NAME: basement
+
+CONNECTION 1:weightroom
+CONNECTION 2:attic
+CONNECTION 3:attic
+ROOM TYPE: MID_ROOM

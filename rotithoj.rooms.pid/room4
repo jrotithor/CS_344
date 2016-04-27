@@ -1,0 +1,8 @@
+ROOM NAME: weightroom
+
+CONNECTION 1:bedroom
+CONNECTION 2:pantry
+CONNECTION 3:basement
+CONNECTION 4:attic
+CONNECTION 5:bedroom
+ROOM TYPE: START_ROOM

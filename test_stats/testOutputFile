@@ -1,0 +1,376 @@
+--------------------------------------------------------------------------
+Creating file1 file2 file3 file4 file5
+
+
+total 40
+-rw-r--r--. 1 rotithoj upg55532  259 Jan 25 15:00 file1
+-rw-r--r--. 1 rotithoj upg55532   49 Jan 25 15:00 file2
+-rw-r--r--. 1 rotithoj upg55532    3 Jan 25 15:00 file3
+-rw-r--r--. 1 rotithoj upg55532    0 Jan 25 15:00 file4
+-rw-r--r--. 1 rotithoj upg55532 5831 Jan 25 15:00 file5
+-rwxr-x--x. 1 rotithoj upg55532 2786 Jan 25 15:00 stats
+
+
+--------------------------------------------------------------------------
+File 1 Statistics by Rows: 1 point per correct number: 18
+
+calculating stats for rows:
+cat: Average:: No such file or directory
+cat: 94: No such file or directory
+cat: Average:: No such file or directory
+cat: 86: No such file or directory
+cat: Average:: No such file or directory
+cat: 74: No such file or directory
+cat: Average:: No such file or directory
+cat: 74: No such file or directory
+cat: Average:: No such file or directory
+cat: 80: No such file or directory
+cat: Average:: No such file or directory
+cat: 64: No such file or directory
+cat: Average:: No such file or directory
+cat: 55: No such file or directory
+cat: Average:: No such file or directory
+cat: 54: No such file or directory
+cat: Average:: No such file or directory
+cat: 100: No such file or directory
+cat: Median : 93: No such file or directory
+cat: Median : 84: No such file or directory
+cat: Median : 81: No such file or directory
+cat: Median : 80: No such file or directory
+cat: Median : 81: No such file or directory
+cat: Median : 61: No such file or directory
+cat: Median : 54: No such file or directory
+cat: Median : 53: No such file or directory
+cat: Median : 100: No such file or directory
+
+
+--------------------------------------------------------------------------
+Check for Temporary Files: 5 points if no temp files
+
+file1
+file2
+file3
+file4
+file5
+rowFile
+stats
+
+
+--------------------------------------------------------------------------
+File 1 Statistics by Cols: 1 point per correct number: 18
+
+calculating stats for columns:
+Average: 75
+Median: 80
+Average: 58
+Median: 57
+Average: 76
+Median: 83
+Average: 72
+Median: 73
+Average: 82
+Median: 88
+Average: 78
+Median: 79
+Average: 71
+Median: 80
+Average: 69
+Median: 71
+Average: 100
+Median: 100
+
+
+--------------------------------------------------------------------------
+Check for Temporary Files: 5 points if no temp files
+
+file1
+file2
+file3
+file4
+file5
+rowFile
+stats
+
+
+--------------------------------------------------------------------------
+File 2 Statistics by Rows: 1 point per correct number: 8
+
+calculating stats for rows:
+cat: Average:: No such file or directory
+cat: 94: No such file or directory
+cat: Average:: No such file or directory
+cat: 91: No such file or directory
+cat: Average:: No such file or directory
+cat: 71: No such file or directory
+cat: Average:: No such file or directory
+cat: 94: No such file or directory
+cat: Median : 95: No such file or directory
+cat: Median : 97: No such file or directory
+cat: Median : 73: No such file or directory
+cat: Median : 94: No such file or directory
+
+
+--------------------------------------------------------------------------
+File 2 Statistics by Cols: 1 point per correct number: 8
+
+calculating stats for columns:
+Average: 85
+Median: 95
+Average: 86
+Median: 94
+Average: 83
+Median: 93
+Average: 96
+Median: 99
+
+
+--------------------------------------------------------------------------
+File 3 Statistics by Rows: 1 point per correct number: 2
+
+calculating stats for rows:
+cat: Average:: No such file or directory
+cat: 17: No such file or directory
+cat: Median : 17: No such file or directory
+
+
+--------------------------------------------------------------------------
+File 3 Statistics by Cols: 1 point per correct number: 2
+
+calculating stats for columns:
+Average: 17
+Median: 17
+
+
+--------------------------------------------------------------------------
+File 4 Statistics by Rows: lose 3 points for error or any number
+
+calculating stats for rows:
+
+
+--------------------------------------------------------------------------
+File 4 Statistics by Cols: lose 3 points for error or any number
+
+calculating stats for columns:
+
+
+--------------------------------------------------------------------------
+File 5 Statistics by Cols: 1 point per number: 4
+
+calculating stats for columns:
+Average: 24950
+Median: 25000
+Average: 49900
+Median: 50000
+
+
+--------------------------------------------------------------------------
+Check for Temporary Files: 5 points if no temp files
+
+file1
+file2
+file3
+file4
+file5
+rowFile
+stats
+
+
+--------------------------------------------------------------------------
+Good Syntax
+
+Standard Input on Rows: 3 points for exit value 0
+1
+You need 3 arguments.
+Exit Value: 1
+Error Message:
+
+Standard Input on Cols: 3 points for exit value 0
+1
+You need 3 arguments.
+Exit Value: 1
+Error Message:
+
+Option -cols: 3 points for exit value 0
+calculating stats for columns:
+Average: 85
+Median: 95
+Average: 86
+Median: 94
+Average: 83
+Median: 93
+Average: 96
+Median: 99
+Exit Value: 0
+Error Message:
+
+Option -rrrrrr: 3 points for exit value 0
+calculating stats for rows:
+Exit Value: 0
+Error Message:
+cat: Average:: No such file or directory
+cat: 94: No such file or directory
+cat: Average:: No such file or directory
+cat: 91: No such file or directory
+cat: Average:: No such file or directory
+cat: 71: No such file or directory
+cat: Average:: No such file or directory
+cat: 94: No such file or directory
+cat: Median : 95: No such file or directory
+cat: Median : 97: No such file or directory
+cat: Median : 73: No such file or directory
+cat: Median : 94: No such file or directory
+
+Option -cccccc: 3 points for exit value 0
+calculating stats for columns:
+Average: 85
+Median: 95
+Average: 86
+Median: 94
+Average: 83
+Median: 93
+Average: 96
+Median: 99
+Exit Value: 0
+Error Message:
+
+Option -r: 3 points for exit value 0
+calculating stats for rows:
+Exit Value: 0
+Error Message:
+cat: Average:: No such file or directory
+cat: 94: No such file or directory
+cat: Average:: No such file or directory
+cat: 91: No such file or directory
+cat: Average:: No such file or directory
+cat: 71: No such file or directory
+cat: Average:: No such file or directory
+cat: 94: No such file or directory
+cat: Median : 95: No such file or directory
+cat: Median : 97: No such file or directory
+cat: Median : 73: No such file or directory
+cat: Median : 94: No such file or directory
+
+
+--------------------------------------------------------------------------
+Bad Syntax
+
+Too Few Arguments: 1 point for usage text, 2 points for exit value 1
+0
+You need 3 arguments.
+Exit Value: 1
+Error Message:
+
+Too Many Arguments: 1 point for usage text, 2 points for exit value 1
+3
+You need 3 arguments.
+Exit Value: 1
+Error Message:
+
+Wrong Format: 1 point for usage text, 2 points for exit value 1
+Usage: stats {-rows|-cols} [file]
+Exit Value: 1
+Error Message:
+
+Bad Option: 1 point for usage text, 2 points for exit value 1
+Usage: stats {-rows|-cols} [file]
+Exit Value: 1
+Error Message:
+
+
+--------------------------------------------------------------------------
+File Not Readable: 2 points for error msg, 2 points for program halting
+
+
+calculating stats for rows:
+Exit Value: 1
+Error Message:
+./stats: line 119: file3: Permission denied
+./stats: line 119: file3: Permission denied
+
+
+
+--------------------------------------------------------------------------
+Check for Temporary Files: 5 points for no temp files
+
+file1
+file2
+file3
+file4
+file5
+rowFile
+stats
+
+
+--------------------------------------------------------------------------
+Simultaneous Runs
+
+
+Before Finishing
+file1
+file2
+file3
+file4
+file5
+rowFile
+simrun1.out
+simrun2.out
+simrun3.out
+stats
+
+
+Run 1 Output: 5 points for succesful run 1
+1
+You need 3 arguments.
+
+Run 2 Output: 5 points for succesful run 2
+1
+You need 3 arguments.
+
+Run 3 Output: 5 points for succesful run 3
+1
+You need 3 arguments.
+
+
+After Finishing: 5 points if no temp file
+file1
+file2
+file3
+file4
+file5
+rowFile
+stats
+
+
+Trap Signals
+
+
+Before Kill
+file1
+file2
+file3
+file4
+file5
+rowFile
+stats
+
+  PID TTY          TIME CMD
+11919 pts/43   00:00:00 p1gradingscript
+16832 pts/43   00:00:00 tcsh
+17170 pts/43   00:00:00 ps
+
+
+After Kill: 8 points if no temp files
+file1
+file2
+file3
+file4
+file5
+rowFile
+stats
+
+  PID TTY          TIME CMD
+11919 pts/43   00:00:00 p1gradingscript
+16832 pts/43   00:00:00 tcsh
+17177 pts/43   00:00:00 ps
+
+

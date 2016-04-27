@@ -1,0 +1,119 @@
+#!/bin/bash
+#Tests to see that there are the proper number of command line arguments
+if [[ $# -ne 2 ]]; then 
+echo $#
+echo "You need 3 arguments."
+exit 1
+fi
+#performs row calculation if input begins with -r
+if [[ $1  == -r* ]]; then
+echo "calculating stats for rows:";
+
+while read myLine
+do
+sum=0;
+i=0;
+mean=0;
+#iterates through the file and adds up each number for a sum per line. This sum is then
+#divided by the total number of numbers in the line for the average
+for num in $myLine
+do 
+sum=`expr $sum + $num`
+let "i++";
+	done
+mean=$((($sum + $i / 2)  / $i))
+
+        cat "Average:" $mean > rowFile
+	done <$2
+#creates an array in which all of the numbers of a line are stored into.
+#This is done so that the numbers can be sorted. Then, the value at the index
+#half of the maximum is selected as the median and printed out.
+	line=1
+	while read myLine
+	do
+	i=0
+	a[0]=0
+	for num in $myLine
+	do
+	a[i]=$num
+((i++))
+	done
+((i/=2))
+	a=( $(printf "%s\n" "${a[@]}" | sort -n ) )
+	cat  "Median : ${a[i]}" > rowFile
+((line++))
+	cat rowFile
+	done <$2
+#if the user selects columns, then first of all, each individual column is cut from the file
+#and put into its own temp file.
+	elif [[ $1  == -c* ]]; then
+	echo "calculating stats for columns:";
+	i=1;
+	while read myLine
+	do
+	cut -f $i $2 > tempCol$i
+#next, each temp file is added onto a file called tempRow so that the mean calculation can be
+#done just as with the rows previously 
+	cat tempCol$i | tr '\n' '\t' > tempRow$i;
+	echo -e "" >> tempRow$i
+	file="tempRow$i"       
+#just as with the rows, here each line is nummed up and the sum is divided by the numebr of
+#numbers in the line to get the average.
+	while read myLine 
+	do
+	sum=0;
+	j=0;
+	mean=0;
+#
+	for num in $myLine
+	do
+	sum=`expr $sum + $num`
+	let "j++"
+	done
+#makes sure that there is no divide by 0
+	if [ $j == 0 ] && [ $sum == 0 ];
+	then
+	break
+	fi
+#echo $sum $j
+mean=$((($sum + $j / 2) / $j))
+	echo "Average: $mean"
+	done < "$file"
+	while read myLine
+	do
+	k=0
+ a[0]=0
+#just as with the rows, each number is stored into an array, the index ends up being the 
+#number of elements in the row minus 1, and this is halved to access the median element
+  for num in $myLine
+   do
+    a[k]=$num
+     ((k++))
+      done
+       if [ $k == 0 ] && [ $sum == 0 ];
+	then
+	break
+  fi
+   ((k/=2))
+    a=( $(printf "%s\n" "${a[@]}" | sort -n ) )
+     echo "Median: ${a[k]}"
+      ((line++))
+       done <$file
+	let "i++";
+	done <$2
+#iterates through all of the temp files created in the process, and removed the 
+#row and column files for each index.
+	Ct=0
+	while [ $Ct -lt $i ];
+	do
+	file2="tempRow$Ct"
+	file3="tempCol$Ct"
+	rm -rf $file2 
+	rm -rf $file3 
+	let "Ct++"
+	done
+#alerts the user that an improper format has been entered
+	else
+	echo "Usage: stats {-rows|-cols} [file]"
+	exit 1
+	fi

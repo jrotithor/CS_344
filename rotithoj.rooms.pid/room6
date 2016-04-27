@@ -1,0 +1,8 @@
+ROOM NAME: attic
+
+CONNECTION 1:garage
+CONNECTION 2:pantry
+CONNECTION 3:basement
+CONNECTION 4:garage
+CONNECTION 5:basement
+ROOM TYPE: MID_ROOM

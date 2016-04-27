@@ -1,0 +1,9 @@
+ROOM NAME: pantry
+
+CONNECTION 1:basement
+CONNECTION 2:bedroom
+CONNECTION 3:attic
+CONNECTION 4:lounge
+CONNECTION 5:bedroom
+CONNECTION 6:basement
+ROOM TYPE: MID_ROOM
